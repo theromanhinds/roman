@@ -8,14 +8,16 @@ export default function Sidebar() {
   return (
     <aside className="self-start md:sticky md:top-12">
       <h2 className="text-2xl font-medium text-foreground mb-6">About me</h2>
-      <img
-        src="/avatar.jpg"
-        alt="Roman Hinds"
-        className="w-40 h-40 rounded-full object-cover object-top mb-6"
-      />
-      <p className="text-base leading-relaxed text-foreground/80 mb-6">
-        Hey, I'm Roman. I build agentic software — applications where AI does the heavy lifting. My focus is turning ideas into clean, fast, genuinely useful products, and I'm usually building several at once. I care about craft: type-driven interfaces, sharp details, and experiences that feel effortless.
-      </p>
+      <div className="mb-6 overflow-hidden">
+        <img
+          src="/avatar.jpg"
+          alt="Roman Hinds"
+          className="float-left w-[4.5lh] h-[4.5lh] rounded-full object-cover object-top mr-5 mb-2"
+        />
+        <p className="text-base leading-relaxed text-foreground/80">
+          Hey, I'm Roman. I build agentic software — applications where AI does the heavy lifting. My focus is turning ideas into clean, fast, genuinely useful products, and I'm usually building several at once. I care about craft: type-driven interfaces, sharp details, and experiences that feel effortless.
+        </p>
+      </div>
       <hr className="border-border mb-6" />
       <div className="flex flex-wrap gap-x-4 gap-y-2">
         {links.map((link) => (

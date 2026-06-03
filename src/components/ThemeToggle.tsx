@@ -1,17 +1,17 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ className = '' }: { className?: string }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
-  if (!mounted) return <div className="w-8 h-8" />; // prevent hydration flash
+  if (!mounted) return <div className={`w-8 h-8 ${className}`} />;
 
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="w-8 h-8 flex items-center justify-center rounded-md text-subtle hover:text-foreground hover:bg-foreground/5 transition-colors duration-200 cursor-pointer"
+      className={`w-8 h-8 flex items-center justify-center rounded-md text-subtle hover:text-foreground hover:bg-foreground/5 transition-colors duration-200 cursor-pointer ${className}`}
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
